@@ -1,4 +1,6 @@
 import Results from "@/components/Results";
+import next from "next";
+import { revalidatePath } from "next/cache";
 
 export default async function Home({ searchParams }) {
   const genre = searchParams?.genre || "fetchTrending";
@@ -17,7 +19,9 @@ export default async function Home({ searchParams }) {
 
   let movies;
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(url, options,
+      {next:{revalidatePath:10000}}
+    );
     const data = await response.json();
     movies = data?.results;
     console.log(data.results);
