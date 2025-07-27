@@ -1,16 +1,12 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
 
-export default function Results({movies}) {
+export default function Results({ movies }) {
   return (
-    <div>
-      {movies.map((movie) => {
-        return (
-          <div key={movie.id} className="flex flex-col p-4 ">
-            <p className="text-2xl font-semibold"> {movie.title}</p>
-            {/* <p>{movie.overview}</p> */}
-          </div>
-        );
-      })}
+    <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto py-4">
+      {movies.map((movie) => (
+        <Card key={movie.id} movie={movie} />
+      ))}
     </div>
-  )
+  );
 }
