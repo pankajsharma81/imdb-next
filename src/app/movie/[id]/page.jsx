@@ -9,8 +9,7 @@ export default async function MoviePage({ params }) {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Yjc5NmZkNWE2Nzc2MTAwMGQzZThmYTU3NWM3N2UzNSIsIm5iZiI6MTcxNDQ2OTE0OC42MDQsInN1YiI6IjY2MzBiOTFjOTY2MWZjMDEyYTY1NjVkZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xnLzBJJnZEuoQ0AfyIeqlX9agNp0_5Rzw0NZoRq7ARo",
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`,
     },
   };
 
