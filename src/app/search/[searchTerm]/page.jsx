@@ -1,7 +1,7 @@
 import Results from "@/components/Results";
 
 export default async function Search({ params }) {
-  const searchTerm = params.searchTerm;
+  const searchTerm =  params.searchTerm;
 
   const url = `https://api.themoviedb.org/3/search/movie?query=${searchTerm}&include_adult=false&language=en-US&page=1`;
   const options = {
